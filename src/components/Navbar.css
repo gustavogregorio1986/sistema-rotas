@@ -1,0 +1,75 @@
+/* Estilos do menu de navegação */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #333;
+  color: white;
+  position: fixed; /* Faz com que o menu fique fixo no topo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Garante que o menu fique por cima de outros elementos */
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.menu ul {
+  display: flex;
+  list-style: none;
+}
+
+.menu ul li {
+  margin-left: 1.5rem;
+}
+
+.menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.toggle {
+  display: none;
+  background: none;
+  color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Estilo responsivo para telas menores */
+@media (max-width: 768px) {
+  .menu {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #333;
+    width: 200px;
+    height: 100vh;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .menu.open {
+    transform: translateX(0);
+  }
+
+  .menu ul {
+    display: block;
+    text-align: right;
+    padding: 0;
+  }
+
+  .menu ul li {
+    margin: 1.5rem 0;
+  }
+
+  .toggle {
+    display: block;
+  }
+}
